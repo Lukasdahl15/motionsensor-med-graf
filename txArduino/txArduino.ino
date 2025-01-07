@@ -45,9 +45,7 @@ void loop() {
     // Afstanden kommer ud i mikrosekunder og skal om skrives til cm, det bliver gjort ved hjælp af formelen mikrosekunder * 0.034 / 2
     afstand = (duration * 0.034) / 2;
     // printer afstanden som blev målet af Prog Shield Ultralyd Afstand og printe det i serial monitoren, som vil se sådan ud "Afstand: x cm"
-    Serial.print("Afstand: ");
-    Serial.print(afstand);
-    Serial.println(" cm");
+    Serial.println(afstand);
     // Piezzoen som lamer alt for meget
     if (afstand < buzzerThreshold) {
       analogWrite(pwmPin, 128);  // Tænd Piezzo
